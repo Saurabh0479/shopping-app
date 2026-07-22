@@ -12,6 +12,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shopping App',
+      theme: ThemeData(
+        fontFamily: 'Kameron',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromRGBO(192, 57, 43, 1.0)
+        ),
+      ),
       home: HomePage(),
     );
   }
