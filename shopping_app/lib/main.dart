@@ -15,8 +15,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Kameron',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromRGBO(192, 57, 43, 1.0)
+          seedColor: Color.fromRGBO(192, 57, 43, 1.0),
+          primary: Color.fromRGBO(192, 57, 43, 1.0),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+          prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
+        )
       ),
       home: HomePage(),
     );
