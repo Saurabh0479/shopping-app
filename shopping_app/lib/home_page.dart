@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/global_variables.dart';
+import 'package:shopping_app/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,7 +71,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     child: GestureDetector(
                       onTap: (){
+                        setState((){
                         selectedFilter = filter;
+                        });
                       },
                       child: Chip(
                         backgroundColor: selectedFilter == filter
@@ -91,6 +95,22 @@ class _HomePageState extends State<HomePage> {
                         )
                       ),
                     ),
+                  );
+                },
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                itemBuilder: (context, index){
+                  final product = products[index];
+                  return ProductCard(
+                    title: product['title'] as String,
+                    price: product['price'] as double,
+                    image: product['imageUrl'] as String,
+                    backgroundColor: index.isEven 
+                    ? Color.fromRGBO(181, 151, 151, 1)
+                    : Color.fromRGBO(184, 181, 141, 1),
                   );
                 },
               ),
